@@ -7,8 +7,7 @@ public class HelloWorld {
         int myFavoriteNumber = 12;
         System.out.println(myFavoriteNumber);
 
-//    String myString = "This is my favorite string";
+        String myString = "This is my favorite string";
+        System.out.println(myString);
     }
-
-
 }
