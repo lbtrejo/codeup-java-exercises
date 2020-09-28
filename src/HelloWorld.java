@@ -8,7 +8,7 @@ public class HelloWorld {
         System.out.println(myFavoriteNumber);
 
         String myString = "This is my favorite string";
-        myString = 'L';
+        myString = 3.14159;
         System.out.println(myString);
     }
 }
