@@ -14,7 +14,7 @@ public class HelloWorld {
 //        long myNumber;
         float myNumber;
 //        myNumber = 123;
-        myNumber = 3.14;
+        myNumber = 3.14F;
         System.out.println(myNumber);
     }
 }
