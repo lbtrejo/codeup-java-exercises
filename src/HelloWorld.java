@@ -11,8 +11,10 @@ public class HelloWorld {
 //        myString = 3.14159;
         System.out.println(myString);
 
-        long myNumber;
-        myNumber = 123;
+//        long myNumber;
+        float myNumber;
+//        myNumber = 123;
+        myNumber = 3.14;
         System.out.println(myNumber);
     }
 }
