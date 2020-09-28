@@ -8,6 +8,7 @@ public class HelloWorld {
         System.out.println(myFavoriteNumber);
 
         String myString = "This is my favorite string";
+        myString = 'L';
         System.out.println(myString);
     }
 }
