@@ -38,9 +38,30 @@ public class ConsoleExercises {
 
         // Scanner #3:
 
-        System.out.println("Enter a sentence: ");
-        //String userSentence = scan.next();  // Only returns the first word of the sentence
-        String userSentence = scan.nextLine(); // Returns the full sentence as the string variable
-        System.out.printf("Here is your sentence: \"%s\"%n", userSentence);
+//        System.out.println("Enter a sentence: ");
+//        //String userSentence = scan.next();  // Only returns the first word of the sentence
+//        String userSentence = scan.nextLine(); // Returns the full sentence as the string variable
+//        System.out.printf("Here is your sentence: \"%s\"%n", userSentence);
+
+        // Classroom dimensions:
+        // #1:
+        System.out.println("Please enter the dimensions of the room.");
+        System.out.println("Length:");
+        String inputLength = scan.nextLine();
+        System.out.println("Width: ");
+        String inputWidth = scan.nextLine();
+
+        int userLength = Integer.parseInt(inputLength);
+        int userWidth = Integer.parseInt(inputWidth);
+
+        System.out.printf("Entered length: %d%n", userLength);
+        System.out.printf("Entered width: %d%n", userWidth);
+
+        int area = userLength * userWidth;
+        int perimeter = 2 * (userLength + userWidth);
+
+        System.out.printf("The area of the room: %d%n", area);
+        System.out.printf("The perimeter of the room: %d%n", perimeter);
+
     }
 }
