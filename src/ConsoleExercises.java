@@ -10,6 +10,7 @@ public class ConsoleExercises {
         // Scanner 1:
         // First import the scanner
         Scanner scan = new Scanner(System.in);
+        scan.useDelimiter("\n");
 
         // Prompt the console for input and store it as a variable
 //        System.out.println("Enter an integer of your choosing: ");
@@ -46,22 +47,31 @@ public class ConsoleExercises {
         // Classroom dimensions:
         // #1:
         System.out.println("Please enter the dimensions of the room.");
-        System.out.println("Length:");
-        String inputLength = scan.nextLine();
-        System.out.println("Width: ");
-        String inputWidth = scan.nextLine();
+//        System.out.println("Length:");
+        float inputLength = scan.nextFloat();
+//        System.out.println("Width: ");
+        float inputWidth = scan.nextFloat();
+//        System.out.println("Height: ");
+        float inputHeight = scan.nextFloat();
+        // Assuming integer inputs from string
+//        int userLength = Integer.parseInt(inputLength);
+//        int userWidth = Integer.parseInt(inputWidth);
+        // Assuming float inputs
+//        float userLength = Float.parseFloat(inputLength);
+//        float userWidth = Float.parseFloat(inputWidth);
+//        float userHeight = Float.parseFloat(inputHeight);
 
-        int userLength = Integer.parseInt(inputLength);
-        int userWidth = Integer.parseInt(inputWidth);
+        System.out.printf("Entered length: %.2f%n", inputLength);
+        System.out.printf("Entered width: %.2f%n", inputWidth);
+        System.out.printf("Entered height: %.2f%n", inputHeight);
 
-        System.out.printf("Entered length: %d%n", userLength);
-        System.out.printf("Entered width: %d%n", userWidth);
+        float area = inputLength * inputWidth;
+        float perimeter = 2 * (inputLength + inputWidth);
+        float volume = area * inputHeight;
 
-        int area = userLength * userWidth;
-        int perimeter = 2 * (userLength + userWidth);
-
-        System.out.printf("The area of the room: %d%n", area);
-        System.out.printf("The perimeter of the room: %d%n", perimeter);
+        System.out.printf("The area of the room: %.2f%n", area);
+        System.out.printf("The perimeter of the room: %.2f%n", perimeter);
+        System.out.printf("The volume of the room: %.2f%n", volume);
 
     }
 }
