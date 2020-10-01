@@ -57,7 +57,29 @@ public class ControlFlowExercises {
 //        }
         // 3. Table of powers
         Scanner scanner = new Scanner(System.in);
-//
+        boolean userContinues = true;
+
+        do {
+            System.out.print("What number would you like to go up to? ");
+            int userInput = Integer.parseInt(scanner.next());
+
+            System.out.println("Number chosen: " + userInput);
+            System.out.println("Here is your table!");
+            System.out.println("");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for (int x = 1; x <= userInput; x++){
+                int squared = (x * x);
+                int cubed = (x * x * x);
+                System.out.println(x + "      | " + squared + "      | " + cubed);
+            }
+            System.out.println("Would you like to continue: [y/N]");
+            String continueInput = scanner.next();
+            if (!continueInput.equals("y")){
+                userContinues = false;
+            }
+        } while(userContinues);
+
 //        System.out.print("What number would you like to go up to? ");
 //        int userInput = Integer.parseInt(scanner.next());
 //
@@ -74,28 +96,28 @@ public class ControlFlowExercises {
 
         // 4.  Convert given number grades into letter grades
 
-        String keepGoing;
-        do {
-            System.out.println("Enter a numerical grade to be converted: ");
-            int userGrade = Integer.parseInt(scanner.next());
-            System.out.println("Numerical grade: " + userGrade);
-            if (userGrade >= 99) {
-                System.out.println("Letter grade: A+");
-            } else if (userGrade > 91) {
-                System.out.println("Letter grade: A");
-            }else if (userGrade > 87) {
-                System.out.println("Letter grade: A-");
-            } else if (userGrade > 79) {
-                System.out.println("Letter grade: B");
-            } else if (userGrade > 66) {
-                System.out.println("Letter grade: C");
-            } else if (userGrade > 59) {
-                System.out.println("Letter grade: D");
-            } else {
-                System.out.println("Letter grade: F");
-            }
-            System.out.println("Would you like to continue?  [y/N]");
-            keepGoing = scanner.next();
-        }while(keepGoing.equals("y"));
+//        String keepGoing;
+//        do {
+//            System.out.println("Enter a numerical grade to be converted: ");
+//            int userGrade = Integer.parseInt(scanner.next());
+//            System.out.println("Numerical grade: " + userGrade);
+//            if (userGrade >= 99) {
+//                System.out.println("Letter grade: A+");
+//            } else if (userGrade > 91) {
+//                System.out.println("Letter grade: A");
+//            }else if (userGrade > 87) {
+//                System.out.println("Letter grade: A-");
+//            } else if (userGrade > 79) {
+//                System.out.println("Letter grade: B");
+//            } else if (userGrade > 66) {
+//                System.out.println("Letter grade: C");
+//            } else if (userGrade > 59) {
+//                System.out.println("Letter grade: D");
+//            } else {
+//                System.out.println("Letter grade: F");
+//            }
+//            System.out.println("Would you like to continue?  [y/N]");
+//            keepGoing = scanner.next();
+//        }while(keepGoing.equals("y"));
     }
 }
