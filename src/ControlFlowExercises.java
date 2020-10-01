@@ -25,12 +25,21 @@ public class ControlFlowExercises {
 //        } while(x >= -10);
 
         // Create a do-while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
-        long x = 2;
+//        long x = 2;
         // originally had this as an int type, caused a fun looping bug because 65536 squared was above the limit for int values
 
-        do {
+//        do {
+//            System.out.println(x);
+//            x *= x;
+//        } while (x < 1000000);
+
+        // C. Refactor A and B to use a for loop
+        for (int i = 5; i <= 15; i++) {
+            System.out.println(i + " ");
+        }
+
+        for (long x = 2; x < 1000000; x *= x) {
             System.out.println(x);
-            x *= x;
-        } while (x < 1000000);
+        }
     }
 }
