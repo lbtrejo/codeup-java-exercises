@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
         // 1.  Loop Basics
@@ -42,17 +44,32 @@ public class ControlFlowExercises {
 //            System.out.println(x);
 //        }
         // 2. Fizzbuzz
-        for (int i = 1; i <= 100; i++){
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-            } else if (i % 3 == 0){
-                System.out.println("Fizz");
-            } else if (i % 5 == 0){
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
-            }
-        }
+//        for (int i = 1; i <= 100; i++){
+//            if (i % 3 == 0 && i % 5 == 0) {
+//                System.out.println("FizzBuzz");
+//            } else if (i % 3 == 0){
+//                System.out.println("Fizz");
+//            } else if (i % 5 == 0){
+//                System.out.println("Buzz");
+//            } else {
+//                System.out.println(i);
+//            }
+//        }
+        // 3. Table of powers
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("What number would you like to go up to? ");
+        int userInput = Integer.parseInt(scanner.next());
+
+        System.out.println("Number chosen: " + userInput);
+        System.out.println("Here is your table!");
+        System.out.println("");
+        System.out.println("number | squared | cubed");
+        System.out.println("------ | ------- | -----");
+        for (int x = 1; x <= userInput; x++){
+            int squared = (x * x);
+            int cubed = (x * x * x);
+            System.out.println(x + "      | " + squared + "      | " + cubed);
+        }
     }
 }
