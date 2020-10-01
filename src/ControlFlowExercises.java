@@ -18,11 +18,19 @@ public class ControlFlowExercises {
 //        } while(x <= 100);
 
         // Alter your loop to count backwards by 5's from 100 to -10.
-        int x = 100;
+//        int x = 100;
+//        do {
+//            System.out.println(x);
+//            x -= 5;
+//        } while(x >= -10);
+
+        // Create a do-while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
+        long x = 2;
+        // originally had this as an int type, caused a fun looping bug because 65536 squared was above the limit for int values
+
         do {
             System.out.println(x);
-            x -= 5;
-        } while(x >= -10);
-
+            x *= x;
+        } while (x < 1000000);
     }
 }
