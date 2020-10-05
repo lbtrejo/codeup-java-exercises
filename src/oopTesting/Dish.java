@@ -16,6 +16,10 @@ public class Dish {
         noodles.wouldRecommend = true;
 
         noodles.printSummary();
+
+        DishTools.shoutDishName(noodles);
+        DishTools.analyzeDishCost(noodles);
+        DishTools.flipRecommendation(noodles);
     }
 }
 

@@ -8,5 +8,11 @@ public class DishTest {
             dish1.wouldRecommend = false;
 
             dish1.printSummary();
+
+            DishTools.shoutDishName(dish1);
+            DishTools.analyzeDishCost(dish1);
+            DishTools.flipRecommendation(dish1);
+
+            System.out.println(DishTools.AVERAGE_COST_OF_DISH_IN_CENTS);
         }
 }
