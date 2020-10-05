@@ -6,7 +6,7 @@ public class Dish {
     public Boolean wouldRecommend;
 
     public void printSummary(){
-        System.out.printf("Cost: %s\nName: %s\nRecommended: %s", costInCents, nameOfDish, wouldRecommend);
+        System.out.printf("Cost: %d%nName: %s%nRecommended: %b%n", this.costInCents, this.nameOfDish, this.wouldRecommend);
     }
 
     public static void main(String[] args) {
