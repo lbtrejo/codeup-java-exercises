@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 //        add(12, 3);
 //        subtract(12, 3);
 //        multiply(12, 3);
@@ -63,7 +64,7 @@ public class MethodsExercises {
         if (min <= currentInput && currentInput <= max) {
             return currentInput;
         } else {
-            System.out.println("Please enter a valid integer");
+            System.out.println("Please enter a valid integer in the range: ");
             return getInteger(min, max);
         }
         // verify the input is inside the valid range
@@ -73,14 +74,31 @@ public class MethodsExercises {
 
 
     // 3.  Factorial calculation
-    public static int getFactorial(){
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);
-        int result = 1;
-        for (int counter = 1; counter <= userInput; counter++){
-            result *= counter;
+    public static void getFactorial() {
+        while (true) {
+            System.out.print("Enter a number between 1 and 20: ");
+            int userInput = getInteger(1, 20);
+            long result = 1;
+
+            for (int counter = 1; counter <= userInput; counter++) {
+                result *= counter;
+
+                // testing for max value using int type
+//                System.out.println(counter + "!: " + result);
+//                if (result < 1) {
+//                    System.out.println("Int threshold hit.");
+//                    System.out.println("Highest int value: " + (counter - 1));
+//                    break;
+//                }
+                // Found 21 was over the threshold, so the threshold is 20
+            }
+            System.out.println( userInput + "! = " + result);
+            System.out.println("Would you like to continue? [y/n]");
+            Scanner scanner = new Scanner(System.in);
+            if (!(scanner.next().equalsIgnoreCase("y"))) {
+                System.out.println("Have a good one!");
+                break;
+            }
         }
-        System.out.println(result);
-        return result;
     }
 }
