@@ -14,7 +14,7 @@ public class MethodsExercises {
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userInput = getInteger(1, 10);
 //        getFactorial();
-        rollDice();
+//        rollDice();
     }
 
     // 1.  Basic arithmetic
@@ -122,5 +122,4 @@ public class MethodsExercises {
         }
             System.out.printf("Okay.  You rolled %d times.", rolls);
     }
-    // Random number: (Math.random() * ( max - min )) + min
 }
