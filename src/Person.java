@@ -36,12 +36,12 @@ public class Person {
 //        Person person2 = person1;
 //        System.out.println(person1 == person2);  // Expected to be true, each object is set to reference the same original object in this specific case
 
-        Person person1 = new Person("John");
-        Person person2 = person1;
-        System.out.println(person1.getName());  // John
-        System.out.println(person2.getName());  // John
-        person2.setName("Jane");
-        System.out.println(person1.getName());  // Jane.  The above line sets the name of the reference object for both people.  Hence, Jane is returned in both instances.
-        System.out.println(person2.getName());  // Jane
+//        Person person1 = new Person("John");
+//        Person person2 = person1;
+//        System.out.println(person1.getName());  // John
+//        System.out.println(person2.getName());  // John
+//        person2.setName("Jane");
+//        System.out.println(person1.getName());  // Jane.  The above line sets the name of the reference object for both people.  Hence, Jane is returned in both instances.
+//        System.out.println(person2.getName());  // Jane
     }
 }
