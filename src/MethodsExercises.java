@@ -8,10 +8,11 @@ public class MethodsExercises {
 //        divide(12, 3);
 //        modulus(12, 5);
 //        longMultiply(-2,5);
-        System.out.println(recursiveMultiply(6, 5));
-
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);
+//        System.out.println(recursiveMultiply(6, 5));
+//
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int userInput = getInteger(1, 10);
+        getFactorial();
     }
 
     // 1.  Basic arithmetic
@@ -53,6 +54,7 @@ public class MethodsExercises {
         return result;
     }
 
+    // 2.  User input validation
     public static int getInteger(int min, int max) {
         // scan for user input
         Scanner scanner = new Scanner(System.in);
@@ -67,5 +69,18 @@ public class MethodsExercises {
         // verify the input is inside the valid range
         // return the number if valid
         // rerun the method if invalid
+    }
+
+
+    // 3.  Factorial calculation
+    public static int getFactorial(){
+        System.out.print("Enter a number between 1 and 10: ");
+        int userInput = getInteger(1, 10);
+        int result = 1;
+        for (int counter = 1; counter <= userInput; counter++){
+            result *= counter;
+        }
+        System.out.println(result);
+        return result;
     }
 }
