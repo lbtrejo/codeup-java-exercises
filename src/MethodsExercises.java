@@ -13,7 +13,8 @@ public class MethodsExercises {
 //
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userInput = getInteger(1, 10);
-        getFactorial();
+//        getFactorial();
+        rollDice(6);
     }
 
     // 1.  Basic arithmetic
@@ -92,13 +93,25 @@ public class MethodsExercises {
 //                }
                 // Found 21 was over the threshold, so the threshold is 20
             }
-            System.out.println( userInput + "! = " + result);
+            System.out.println(userInput + "! = " + result);
             System.out.println("Would you like to continue? [y/n]");
             Scanner scanner = new Scanner(System.in);
             if (!(scanner.next().equalsIgnoreCase("y"))) {
                 System.out.println("Have a good one!");
                 break;
             }
+            // TODO Implement this using a recursion
         }
     }
+
+    // 4. Create an application that simulates dice rolling
+    public static void rollDice(int sides){
+        System.out.println("Roll the bones? [y/n]");
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.next().equalsIgnoreCase("y")){
+            System.out.println("Die #1: " + (int)((Math.random() * ((sides - 1) + 1)) + 1));
+            System.out.println("Die #2: " + (int)((Math.random() * ((sides - 1) + 1)) + 1));
+        }
+    }
+
 }
