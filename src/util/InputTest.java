@@ -8,6 +8,9 @@ public class InputTest {
         userInput = testing.getString();
         System.out.println("User Input: " + userInput);
 
+        String stringPromptInput = testing.getString("What is your input?:");
+        System.out.println("stringPromptInput = " + stringPromptInput);
+
         boolean boolTest = testing.yesNo();
         System.out.println("yesNo result: " + boolTest);
 
