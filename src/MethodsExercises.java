@@ -14,7 +14,7 @@ public class MethodsExercises {
 //        System.out.print("Enter a number between 1 and 10: ");
 //        int userInput = getInteger(1, 10);
 //        getFactorial();
-        rollDice(6);
+        rollDice();
     }
 
     // 1.  Basic arithmetic
@@ -105,13 +105,22 @@ public class MethodsExercises {
     }
 
     // 4. Create an application that simulates dice rolling
-    public static void rollDice(int sides){
-        System.out.println("Roll the bones? [y/n]");
+    public static void rollDice(){
         Scanner scanner = new Scanner(System.in);
-        if (scanner.next().equalsIgnoreCase("y")){
+        System.out.println("How many sides are on the die?: ");
+        int sides = scanner.nextInt();
+        int rolls = 0;
+        System.out.printf("%d sided die, got it.%n", sides);
+        System.out.println("Ready to roll? [y/n]");
+        String ready = scanner.next();
+        while (ready.equalsIgnoreCase("y")){
             System.out.println("Die #1: " + (int)((Math.random() * ((sides - 1) + 1)) + 1));
             System.out.println("Die #2: " + (int)((Math.random() * ((sides - 1) + 1)) + 1));
+            rolls++;
+            System.out.println("Roll again? [y/n]");
+            ready = scanner.next();
         }
+            System.out.printf("Okay.  You rolled %d times.", rolls);
     }
-
+    // Random number: (Math.random() * ( max - min )) + min
 }
