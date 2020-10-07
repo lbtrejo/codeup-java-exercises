@@ -2,16 +2,19 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 //        add(12, 3);
 //        subtract(12, 3);
 //        multiply(12, 3);
 //        divide(12, 3);
 //        modulus(12, 5);
 //        longMultiply(-2,5);
-        System.out.println(recursiveMultiply(6, 5));
-
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = getInteger(1, 10);
+//        System.out.println(recursiveMultiply(6, 5));
+//
+//        System.out.print("Enter a number between 1 and 10: ");
+//        int userInput = getInteger(1, 10);
+//        getFactorial();
+//        rollDice();
     }
 
     // 1.  Basic arithmetic
@@ -53,6 +56,7 @@ public class MethodsExercises {
         return result;
     }
 
+    // 2.  User input validation
     public static int getInteger(int min, int max) {
         // scan for user input
         Scanner scanner = new Scanner(System.in);
@@ -61,11 +65,61 @@ public class MethodsExercises {
         if (min <= currentInput && currentInput <= max) {
             return currentInput;
         } else {
-            System.out.println("Please enter a valid integer");
+            System.out.println("Please enter a valid integer in the range: ");
             return getInteger(min, max);
         }
         // verify the input is inside the valid range
         // return the number if valid
         // rerun the method if invalid
+    }
+
+
+    // 3.  Factorial calculation
+    public static void getFactorial() {
+        while (true) {
+            System.out.print("Enter a number between 1 and 20: ");
+            int userInput = getInteger(1, 20);
+            long result = 1;
+
+            for (int counter = 1; counter <= userInput; counter++) {
+                result *= counter;
+
+                // testing for max value using int type
+//                System.out.println(counter + "!: " + result);
+//                if (result < 1) {
+//                    System.out.println("Int threshold hit.");
+//                    System.out.println("Highest int value: " + (counter - 1));
+//                    break;
+//                }
+                // Found 21 was over the threshold, so the threshold is 20
+            }
+            System.out.println(userInput + "! = " + result);
+            System.out.println("Would you like to continue? [y/n]");
+            Scanner scanner = new Scanner(System.in);
+            if (!(scanner.next().equalsIgnoreCase("y"))) {
+                System.out.println("Have a good one!");
+                break;
+            }
+            // TODO Implement this using a recursion
+        }
+    }
+
+    // 4. Create an application that simulates dice rolling
+    public static void rollDice(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("How many sides are on the die?: ");
+        int sides = scanner.nextInt();
+        int rolls = 0;
+        System.out.printf("%d sided die, got it.%n", sides);
+        System.out.println("Ready to roll? [y/n]");
+        String ready = scanner.next();
+        while (ready.equalsIgnoreCase("y")){
+            System.out.println("Die #1: " + (int)((Math.random() * ((sides - 1) + 1)) + 1));
+            System.out.println("Die #2: " + (int)((Math.random() * ((sides - 1) + 1)) + 1));
+            rolls++;
+            System.out.println("Roll again? [y/n]");
+            ready = scanner.next();
+        }
+            System.out.printf("Okay.  You rolled %d times.", rolls);
     }
 }
