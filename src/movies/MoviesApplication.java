@@ -72,10 +72,7 @@ public class MoviesApplication {
 
     public static Movie newMovie(){
         Input input = new Input();
-        String movieName = input.getString("Enter the name of the new movie: ");
-        String movieCategory = input.getString("Enter the category of the new movie: ");
-        Movie newMovie = new Movie(movieName, movieCategory);
-        return newMovie;
+        return new Movie(input.getString("Enter the name of the new movie: "), input.getString("Enter the category of the new movie: "));
     }
 
     public static Movie[] addMovieToArray(Movie [] movieArray, Movie film){
