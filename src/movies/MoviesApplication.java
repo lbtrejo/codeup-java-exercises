@@ -9,7 +9,7 @@ public class MoviesApplication {
         while (true){
             showMenu();
             Input input = new Input();
-            int selection = input.getInt(0, 5, "Please enter a choice: ");
+            int selection = input.getInt(0, 6, "Please enter a choice: ");
             if (selection == 0){
                 break;
             } else if (selection == 1){
@@ -20,8 +20,10 @@ public class MoviesApplication {
                 printMovieList(main, "drama");
             } else if (selection == 4){
                 printMovieList(main, "horror");
-            } else {
+            } else if (selection == 5){
                 printMovieList(main, "scifi");
+            } else {
+                addMovie();
             }
 
         }
@@ -37,6 +39,7 @@ public class MoviesApplication {
         System.out.println("3 - view movies in the drama category");
         System.out.println("4 - view movies in the horror category");
         System.out.println("5 - view movies in the scifi category");
+        System.out.println("6 - add a movie");
         System.out.println();
     }
 
@@ -65,8 +68,12 @@ public class MoviesApplication {
         System.out.println();
     }
 
-    public static Movie addMovie(String name, String category){
-        Movie newMovie = new Movie(name, category);
+    public static Movie addMovie(){
+        Input input = new Input();
+        String movieName = input.getString("Enter the name of the new movie: ");
+        String movieCategory = input.getString("Enter the category of the new movie: ");
+        Movie newMovie = new Movie(movieName, movieCategory);
+        printMovie(newMovie);
         return newMovie;
     }
 
