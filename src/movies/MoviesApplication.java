@@ -64,4 +64,15 @@ public class MoviesApplication {
         System.out.println("=========================");
         System.out.println();
     }
+
+    public static Movie addMovie(String name, String category){
+        Movie newMovie = new Movie(name, category);
+        return newMovie;
+    }
+
+//    public static Movie[] addMovieToArray(Movie [] movieArray, Movie film){
+//        // Copy the original array into the result array with length + 1
+//        // Add film as the object of the last element in the array
+//        // return the result array
+//    }
 }
