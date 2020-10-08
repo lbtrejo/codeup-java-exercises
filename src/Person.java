@@ -2,7 +2,7 @@ public class Person {
     private String name;
     public String getName(){
 //TODO: return the person's name
-        System.out.println(name);
+//        System.out.println(name);
         return name;
     }
     public void setName(String name){
