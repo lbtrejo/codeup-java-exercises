@@ -1,6 +1,8 @@
 package movies;
 import util.Input;
 
+import java.util.Arrays;
+
 public class MoviesApplication {
     public static void main(String[] args) {
         Movie[] main = MoviesArray.findAll();
@@ -23,7 +25,7 @@ public class MoviesApplication {
             } else if (selection == 5){
                 printMovieList(main, "scifi");
             } else {
-                addMovie();
+                main = addMovieToArray(main, newMovie());
             }
 
         }
@@ -68,18 +70,17 @@ public class MoviesApplication {
         System.out.println();
     }
 
-    public static Movie addMovie(){
+    public static Movie newMovie(){
         Input input = new Input();
         String movieName = input.getString("Enter the name of the new movie: ");
         String movieCategory = input.getString("Enter the category of the new movie: ");
         Movie newMovie = new Movie(movieName, movieCategory);
-        printMovie(newMovie);
         return newMovie;
     }
 
-//    public static Movie[] addMovieToArray(Movie [] movieArray, Movie film){
-//        // Copy the original array into the result array with length + 1
-//        // Add film as the object of the last element in the array
-//        // return the result array
-//    }
+    public static Movie[] addMovieToArray(Movie [] movieArray, Movie film){
+        movieArray = Arrays.copyOf(movieArray, movieArray.length+1);
+        movieArray[movieArray.length-1] = film;
+        return  movieArray;
+    }
 }
