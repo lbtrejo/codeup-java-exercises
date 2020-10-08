@@ -15,13 +15,13 @@ public class MoviesApplication {
             } else if (selection == 1){
                 printMovieList(main);
             } else if (selection == 2){
-                printAnimated(main);
+                printMovieList(main, "animated");
             } else if (selection == 3){
-                printDrama(main);
+                printMovieList(main, "drama");
             } else if (selection == 4){
-                printHorror(main);
+                printMovieList(main, "horror");
             } else {
-                printSciFi(main);
+                printMovieList(main, "scifi");
             }
 
         }
@@ -45,45 +45,23 @@ public class MoviesApplication {
     }
 
     public static void printMovieList(Movie[] main){
+        System.out.println();
+        System.out.println("=========================");
         for (Movie movie : main){
             printMovie(movie);
         }
+        System.out.println("=========================");
         System.out.println();
     }
-
-    public static void printAnimated(Movie[] main){
+    public static void printMovieList(Movie[] main, String category){
+        System.out.println();
+        System.out.println("=========================");
         for (Movie movie : main){
-            if (movie.getMovieCategory().equalsIgnoreCase("animated")){
+            if (movie.getMovieCategory().equalsIgnoreCase(category)){
                 printMovie(movie);
             }
         }
-        System.out.println();
-    }
-
-    public static void printDrama(Movie[] main){
-        for (Movie movie : main){
-            if (movie.getMovieCategory().equalsIgnoreCase("drama")){
-                printMovie(movie);
-            }
-        }
-        System.out.println();
-    }
-
-    public static void printHorror(Movie[] main){
-        for (Movie movie : main){
-            if (movie.getMovieCategory().equalsIgnoreCase("horror")){
-                printMovie(movie);
-            }
-        }
-        System.out.println();
-    }
-
-    public static void printSciFi(Movie[] main){
-        for (Movie movie : main){
-            if (movie.getMovieCategory().equalsIgnoreCase("scifi")){
-                printMovie(movie);
-            }
-        }
+        System.out.println("=========================");
         System.out.println();
     }
 }
