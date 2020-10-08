@@ -45,7 +45,7 @@ public class Input {
         System.out.printf("Enter an integer between %d and %d: %n", min, max);
         int userInput = this.inputScan.nextInt();
         if (min <= userInput && userInput <= max) {
-            System.out.printf("Your chosen integer: %d%n", userInput);
+//            System.out.printf("Your chosen integer: %d%n", userInput);
             return userInput;
         } else {
             System.out.println("Please enter a valid integer");
@@ -57,7 +57,7 @@ public class Input {
         System.out.printf(prompt);
         int userInput = this.inputScan.nextInt();
         if (min <= userInput && userInput <= max) {
-            System.out.printf("Your chosen integer: %d%n", userInput);
+//            System.out.printf("Your chosen integer: %d%n", userInput);
             return userInput;
         } else {
             System.out.println("Please enter a valid integer");
@@ -79,7 +79,7 @@ public class Input {
         System.out.printf("Enter a number between %f and %f: %n", min, max);
         double userInput = this.inputScan.nextDouble();
         if (min <= userInput && userInput <= max) {
-            System.out.printf("Your chosen number: %f%n", userInput);
+//            System.out.printf("Your chosen number: %f%n", userInput);
             return userInput;
         } else {
             System.out.println("Please enter a valid number in the range: ");
@@ -91,7 +91,7 @@ public class Input {
         System.out.printf(prompt);
         double userInput = this.inputScan.nextDouble();
         if (min <= userInput && userInput <= max) {
-            System.out.printf("Your chosen number: %f%n", userInput);
+//            System.out.printf("Your chosen number: %f%n", userInput);
             return userInput;
         } else {
             System.out.println("Please enter a valid number in the range: ");
