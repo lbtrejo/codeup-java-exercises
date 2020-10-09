@@ -16,11 +16,11 @@ public class Rectangle extends Quadrilateral implements Measurable {
 
     @Override
     public double getArea() {
-        return super.getArea();
+        return (this.length * this.width);
     }
 
     @Override
     public double getPerimeter() {
-        return super.getPerimeter();
+        return (2 * (this.length + this.width));
     }
 }
