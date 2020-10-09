@@ -20,7 +20,14 @@ public class GroceryListApp {
         int listSize = input.getInt("How many items will be added to the list: ");
         System.out.println("listSize = " + listSize);
         GroceryItem[] listArray = new GroceryItem[listSize];
-        GroceryItem newItem = new GroceryItem();
-        newItem.printGroceryItem();
+
+        for (byte i = 0; i < listArray.length; i++) {
+            GroceryItem newItem = new GroceryItem();
+            listArray[i] = newItem;
+        }
+
+        for (GroceryItem item : listArray) {
+            item.printGroceryItem();
+        }
     }
 }

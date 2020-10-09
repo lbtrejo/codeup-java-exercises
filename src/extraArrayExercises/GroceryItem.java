@@ -17,9 +17,11 @@ public class GroceryItem {
         this.name = new Input().getString("Item name: ");
         this.quantity = new Input().getInt("Item quantity: ");
         this.category = new Input().getString("Item category: ");
+        System.out.println("Item added to list.");
+        System.out.println();
     }
 
     public void printGroceryItem(){
-        System.out.printf("%s -- %d -- %s", this.name, this.quantity, this.category);
+        System.out.printf("%s -- %d -- %s%n", this.name, this.quantity, this.category);
     }
 }
