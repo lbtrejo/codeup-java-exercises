@@ -20,6 +20,10 @@ public class Student {
         grades.add(grade);
     }
 
+    public ArrayList<Integer> getGrades(){
+        return this.grades;
+    }
+
     public double getGradeAverage(){
         int gradeTotal = 0;
         int numberOfGrades = 0;
@@ -31,17 +35,17 @@ public class Student {
     }
 
 
-    public static void main(String[] args) {
-        Student fer = new Student("Fer");
-        fer.addGrade(100);
-        fer.addGrade(23);
-        fer.addGrade(64);
-        fer.addGrade(97);
-        fer.addGrade(13);
-        fer.addGrade(13);
-
-
-        System.out.println("fer.getName() = " + fer.getName());
-        System.out.println("fer.getGradeAverage() = " + fer.getGradeAverage());
-    }
+//    public static void main(String[] args) {
+//        Student fer = new Student("Fer");
+//        fer.addGrade(100);
+//        fer.addGrade(23);
+//        fer.addGrade(64);
+//        fer.addGrade(97);
+//        fer.addGrade(13);
+//        fer.addGrade(13);
+//
+//
+//        System.out.println("fer.getName() = " + fer.getName());
+//        System.out.println("fer.getGradeAverage() = " + fer.getGradeAverage());
+//    }
 }
