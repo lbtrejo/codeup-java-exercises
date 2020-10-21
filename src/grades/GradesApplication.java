@@ -1,6 +1,10 @@
 package grades;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
+
 import util.Input;
 
 public class GradesApplication {
@@ -9,23 +13,11 @@ public class GradesApplication {
         Input input = new Input();
         boolean continueLoop = true;
 
-        Student fry = new Student("Philip J. Fry");
-        Student leela = new Student("Turanga Leela");
-        Student bender = new Student("Bender Bending Rodriguez");
-        Student professor = new Student("Professor Farnsworth");
-        Student zoidberg = new Student("Dr. Zoidberg");
-
-        students.put("justfry1999", fry);
-        students.put("schnookums1", leela);
-        students.put("shutupbaby420", bender);
-        students.put("davinciSucks42", professor);
-        students.put("johnzoidberg3", zoidberg);
-
-        GradesApplication.populateGrades(zoidberg, 5);
-        GradesApplication.populateGrades(professor, 5);
-        GradesApplication.populateGrades(bender, 5);
-        GradesApplication.populateGrades(leela, 5);
-        GradesApplication.populateGrades(fry, 5);
+        List<String> studentList = Arrays.asList("Philip J. Fry", "Turanga Leela", "Bender Bending Rodriguez", "Professor Farnsworth", "Dr. Zoidberg");
+        List<String> githubList = Arrays.asList("justfry1999", "schnookums1", "shutupbaby420", "davinciSucks42", "johnzoidberg3");
+        ArrayList<Student> studentObjects = AppUtils.populateStudents(studentList);
+        AppUtils.populateMap(githubList, studentObjects, students);
+        AppUtils.populateGrades(studentObjects, 10);
 
         System.out.printf("Welcome!%n%n");
         System.out.printf("Here are the GitHub usernames of our students:%n%n");
@@ -46,11 +38,5 @@ public class GradesApplication {
             continueLoop = input.yesNo("Would you like to see another student?");
         }
         System.out.println("Goodbye, and have a wonderful day!");
-    }
-
-    public static void populateGrades(Student student, int numberOfGrades){
-        for (int i = 1; i <= numberOfGrades; i++){
-            student.addGrade((int)(Math.random()*((100-1)+1)));
-        }
     }
 }
