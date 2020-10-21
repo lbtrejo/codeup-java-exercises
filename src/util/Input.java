@@ -21,18 +21,29 @@ public class Input {
     }
 
     public int getInt(String prompt){
-        System.out.println(prompt);
-        return this.inputScan.nextInt();
+        try {
+            String userInput = this.getString(prompt);
+            return Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.err.println("Please enter a valid integer value");
+            return getInt(prompt);
+        }
+
     }
 
     public int getInt(int min, int max, String prompt){
-        System.out.printf(prompt);
-        int userInput = this.inputScan.nextInt();
-        if (min <= userInput && userInput <= max) {
-//            System.out.printf("Your chosen integer: %d%n", userInput);
-            return userInput;
+        String userInput = this.getString(prompt);
+        int userInt;
+        try {
+            userInt = Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.err.println("Please enter a valid integer.");
+            return getInt(min, max, prompt);
+        }
+        if (min <= userInt && userInt <= max) {
+            return userInt;
         } else {
-            System.out.println("Please enter a valid integer");
+            System.err.printf("%d is not between %d and %d.%n", userInt, min, max);
             return getInt(min, max, prompt);
         }
     }
@@ -46,7 +57,6 @@ public class Input {
         System.out.printf(prompt);
         double userInput = this.inputScan.nextDouble();
         if (min <= userInput && userInput <= max) {
-//            System.out.printf("Your chosen number: %f%n", userInput);
             return userInput;
         } else {
             System.out.println("Please enter a valid number in the range: ");
