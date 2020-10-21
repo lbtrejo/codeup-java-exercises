@@ -28,7 +28,6 @@ public class Input {
             System.err.println("Please enter a valid integer value");
             return getInt(prompt);
         }
-
     }
 
     public int getInt(int min, int max, String prompt){
@@ -73,6 +72,26 @@ public class Input {
         } else {
             System.err.printf("%f is not between %f and %f.%n", userDbl, min, max);
             return getDouble(min, max, prompt);
+        }
+    }
+
+    public int getBinary(String prompt){
+        try {
+            String userInput = this.getString(prompt);
+            return Integer.valueOf(userInput, 2);
+        } catch (NumberFormatException e) {
+            System.err.println("Please enter a valid binary value");
+            return getInt(prompt);
+        }
+    }
+
+    public int getHex(String prompt){
+        try {
+            String userInput = this.getString(prompt);
+            return Integer.valueOf(userInput, 16);
+        } catch (NumberFormatException e) {
+            System.err.println("Please enter a valid hexadecimal value");
+            return getInt(prompt);
         }
     }
 }
