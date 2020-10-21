@@ -49,17 +49,29 @@ public class Input {
     }
 
     public double getDouble(String prompt){
-        System.out.println(prompt);
-        return this.inputScan.nextDouble();
+        try {
+            String userInput = this.getString(prompt);
+            return Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.err.println("Please enter a valid decimal value");
+            return getDouble(prompt);
+        }
+
     }
 
-    public double getDouble(double min, double max, String prompt){
-        System.out.printf(prompt);
-        double userInput = this.inputScan.nextDouble();
-        if (min <= userInput && userInput <= max) {
-            return userInput;
+    public double getDouble(double min, double max, String prompt) {
+        String userInput = this.getString(prompt);
+        double userDbl;
+        try {
+            userDbl = Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.err.println("Please enter a valid decimal number.");
+            return getDouble(min, max, prompt);
+        }
+        if (min <= userDbl && userDbl <= max) {
+            return userDbl;
         } else {
-            System.out.println("Please enter a valid number in the range: ");
+            System.err.printf("%f is not between %f and %f.%n", userDbl, min, max);
             return getDouble(min, max, prompt);
         }
     }

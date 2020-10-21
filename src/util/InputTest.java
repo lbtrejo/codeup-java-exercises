@@ -5,11 +5,8 @@ public class InputTest {
 
         Input input = new Input();
 
-//        int userInt = input.getInt("Enter an integer: ");
-//        System.out.println("userInt = " + userInt);
-
-        int userIntTwo = input.getInt(1, 10, "Enter an integer between 1 and 10:");
-        System.out.println("userIntTwo = " + userIntTwo);
+        double userDbl = input.getDouble(0.0, 100.00, "Enter a decimal:");
+        System.out.println("userDbl = " + userDbl);
 
     }
 }
